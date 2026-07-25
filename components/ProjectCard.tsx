@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { supabase } from "@/app/lib/supabase-client";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const ProjectCard = () => {
 	const [projects, setProjects] = useState<any[]>([]);
@@ -18,6 +20,27 @@ const ProjectCard = () => {
 	useEffect(() => {
 		fetchProjects();
 	}, []);
+
+	const elements = [".card-project"];
+
+	useGSAP(() => {
+		elements.forEach((element) => {
+			const tl = gsap.timeline({
+				scrollTrigger: {
+					trigger: element,
+					start: "top 80%",
+				},
+			});
+
+			tl.from(element, {
+				opacity: 0,
+				y: 100,
+				duration: 1,
+				stagger: 0.5,
+				ease: "power2.out",
+			});
+		});
+	});
 
 	return (
 		<div className="grid grid-cols-1 md:grid-cols-2 gap-gutter card-project">

@@ -10,7 +10,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const Projects = () => {
 	const container = useRef<HTMLDivElement>(null);
-	const elements = [".heading-project", ".card-project"];
+	const elements = [".heading-project"];
 
 	useGSAP(() => {
 		elements.forEach((element) => {
@@ -24,8 +24,7 @@ const Projects = () => {
 			tl.from(element, {
 				opacity: 0,
 				y: 100,
-				duration: 1,
-				stagger: 0.5,
+				duration: 0.5,
 				ease: "power2.out",
 			});
 		});

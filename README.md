@@ -15,6 +15,7 @@ Welcome to the source code repository for my personal portfolio. This project se
 - **Framework:** [Next.js](https://nextjs.org/) (React Framework for performance & SEO)
 - **Language:** [TypeScript](https://www.typescriptlang.org/) (Type-safe and scalable code)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/) (Modern, responsive utility-first CSS)
+- **Animation:** [GSAP](https://gsap.com/) (Professional-grade high-performance web animations)
 - **State Management:** [Zustand](https://zustand-demo.pmnd.rs/) (Lightweight and fast global state management)
 - **Backend & Database:** [Supabase](https://supabase.com/) (Reliable database and real-time backend)
 
@@ -37,6 +38,7 @@ Selamat datang di repositori kode sumber untuk website portofolio pribadi saya. 
 - **Framework:** [Next.js](https://nextjs.org/) (Framework React untuk performa dan SEO yang optimal)
 - **Language:** [TypeScript](https://www.typescriptlang.org/) (Untuk keamanan tipe data dan skalabilitas kode)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/) (Desain antarmuka yang cepat, modern, dan _responsive_)
+- **Animation:** [GSAP](https://gsap.com/) (Pustaka animasi web profesional dengan performa tinggi)
 - **State Management:** [Zustand](https://zustand-demo.pmnd.rs/) (Manajemen _state_ global yang ringan dan efisien)
 - **Backend & Database:** [Supabase](https://supabase.com/) (Penyimpanan data yang aman dan handal)
 

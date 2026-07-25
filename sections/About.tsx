@@ -67,7 +67,7 @@ const About = () => {
 				duration: 0.5,
 				y: 100,
 				opacity: 0,
-				stagger: 0.5,
+				stagger: 0.05,
 				ease: "power2.out",
 			})
 			.from(".hero h2", {
