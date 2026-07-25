@@ -9,28 +9,36 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const Contact = () => {
 	const spanRef = useRef<HTMLSpanElement>(null);
+	const divRef = useRef<HTMLDivElement>(null);
 
 	useGSAP(() => {
 		const tl = gsap.timeline({
 			scrollTrigger: {
-				trigger: ".contact-section",
+				trigger: ".contact-init",
 				start: "top 80%",
 			},
 		});
 
-		tl.from(".contact-section", {
+		tl.from(".contact-init", {
 			opacity: 0,
 			y: 100,
 			duration: 1,
 			ease: "power2.out",
-		}).to(spanRef.current, {
-			// blinking cursor effect
-			opacity: 0,
-			repeat: -1,
-			yoyo: true,
-			duration: 0.5,
-			ease: "power2.inOut",
-		});
+		})
+			.from(".form-init", {
+				opacity: 0,
+				y: 100,
+				duration: 1,
+				ease: "power2.out",
+			})
+			.to(spanRef.current, {
+				// blinking cursor effect
+				opacity: 0,
+				repeat: -1,
+				yoyo: true,
+				duration: 0.5,
+				ease: "power2.inOut",
+			});
 	});
 
 	return (
@@ -39,7 +47,7 @@ const Contact = () => {
 			id="contact"
 		>
 			<div className="max-w-300 mx-auto px-margin w-full grid grid-cols-1 md:grid-cols-2 gap-xl py-lg">
-				<div>
+				<div ref={divRef} className="contact-init">
 					<h2 className="font-display-lg text-display-lg text-primary uppercase leading-none">
 						Initiate
 					</h2>
@@ -47,34 +55,30 @@ const Contact = () => {
 						Protocol.
 					</h2>
 					<p className="font-body-lg text-body-lg text-on-surface-variant mb-lg">
-						<span
-							ref={spanRef}
-							className="border-secondary-container text-on-surface-variant border-l-2 pl-2"
-						>
-							Status: Open to work & networking.
-						</span>{" "}
-						<br />
 						Drop a ping through the form to discuss independent contracting, IT
 						roles, or just to expand our network.
 					</p>
 					<div className="space-y-sm font-mono-data text-mono-data uppercase text-primary border-l-4 border-primary pl-sm">
 						<div className="flex items-center">
 							<span className="material-symbols-outlined mr-xs">mail</span>
-							admin@informatics-sys.com
+							aribdmn.dev@gmail.com
 						</div>
 						<div className="flex items-center">
 							<span className="material-symbols-outlined mr-xs">
 								location_on
 							</span>
-							Data Center, Sector 4
+							Jakarta, Indonesia
 						</div>
 						<div className="flex items-center text-secondary-container mt-sm">
-							<span className="material-symbols-outlined mr-xs">lock</span>
-							PGP Key Available upon request.
+							<span className="material-symbols-outlined mr-xs">work</span>
+							<span ref={spanRef}>OPEN FOR COLLABORATION & PROJECTS.</span>
 						</div>
 					</div>
 				</div>
-				<div className="bg-surface border-2 border-primary p-lg relative">
+				<div
+					ref={divRef}
+					className="form-init bg-surface border-2 border-primary p-lg relative"
+				>
 					{/* <!-- Accent corner --> */}
 					<div className="absolute top-0 right-0 w-8 h-8 border-b-2 border-l-2 border-primary bg-secondary-container"></div>
 					<form className="space-y-md">

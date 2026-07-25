@@ -2,10 +2,16 @@
 
 import Link from "next/link";
 import { useNavigationStore } from "@/stores/useNavigationState";
-import { useEffect } from "react";
+import { useEffect, useState, useRef } from "react";
+
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const Navbar = () => {
 	const { activeSection, setActiveSection } = useNavigationStore();
+	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
+	const menuRef = useRef<HTMLDivElement>(null);
+	const timelineRef = useRef<gsap.core.Timeline | null>(null);
 
 	useEffect(() => {
 		const sections = document.querySelectorAll("section");
@@ -36,9 +42,47 @@ const Navbar = () => {
 					"text-on-surface-variant hover:bg-secondary hover:text-on-secondary";
 	};
 
+	useGSAP(
+		() => {
+			const tl = gsap.timeline({ paused: true });
+
+			tl.from(menuRef.current, {
+				y: -100,
+				duration: 1,
+				opacity: 0,
+				ease: "power3.out",
+			}).fromTo(
+				".mobile-link",
+				{ opacity: 0, y: 20 },
+				{ opacity: 1, y: 0, duration: 0.3, stagger: 0.1, ease: "power2.out" },
+				"-=0.2",
+			);
+
+			timelineRef.current = tl;
+		},
+		{ scope: menuRef },
+	);
+
+	const toggleMobileMenu = () => {
+		setIsMobileMenuOpen((prev) => !prev);
+
+		if (!timelineRef.current) return;
+
+		if (!isMobileMenuOpen) {
+			setIsMobileMenuOpen(true);
+			timelineRef.current.play(); // Jalankan animasi maju (Buka)
+		} else {
+			// Mainkan animasi secara mundur (Tutup), lalu ubah state isOpen setelah selesai
+			timelineRef.current.reverse();
+			setTimeout(() => {
+				setIsMobileMenuOpen(false);
+			}, 400); // Sesuaikan dengan durasi animasi tutup
+		}
+	};
+
 	return (
 		<nav className="fixed top-0 w-full z-50 bg-surface border-b-2 border-primary transition-colors duration-150 ease-in-out">
-			<div className="flex justify-between items-center px-margin pt-4 py-5 max-w-300 mx-auto">
+			<div className="flex justify-between z-50 items-center px-margin pt-4 py-5 max-w-300 mx-auto">
 				<div className="font-headline-md text-headline-md font-bold text-primary  tracking-tight">
 					BUDDEV!
 				</div>
@@ -59,16 +103,20 @@ const Navbar = () => {
 					DOWNLOAD CV
 				</button>
 				{/* <!-- Mobile Menu Icon (Placeholder interaction) --> */}
-				<button className="md:hidden text-primary">
+				<button className="md:hidden text-primary" onClick={toggleMobileMenu}>
 					<span
 						className="material-symbols-outlined"
 						style={{ fontVariationSettings: '"FILL" 1' }}
 					>
-						menu
+						{isMobileMenuOpen ? "close" : "menu"}
 					</span>
 				</button>
 				{/* <!-- Mobile Menu (Placeholder interaction) --> */}
-				<div className="hidden absolute top-full left-0 w-full bg-surface border-b-2 border-primary shadow-lg">
+
+				<div
+					ref={menuRef}
+					className={`${isMobileMenuOpen ? "block" : "hidden"} z-30 nav-mobile absolute top-full left-0 w-full bg-surface border-b-2 border-primary shadow-lg`}
+				>
 					<ul className="py-2 space-y-1">
 						{["about", "skills", "projects", "contact"].map((id) => (
 							<li key={id}>

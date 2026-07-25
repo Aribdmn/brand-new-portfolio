@@ -13,19 +13,19 @@ const Footer = () => {
 				<div className="flex gap-md">
 					<a
 						className="font-code-sm text-code-sm text-primary hover:text-secondary-container uppercase"
-						href="#"
+						href="https://github.com/Aribdmn"
 					>
 						Github
 					</a>
 					<a
 						className="font-code-sm text-code-sm text-primary hover:text-secondary-container uppercase"
-						href="#"
+						href="https://www.linkedin.com/in/aribdmn99/"
 					>
 						LinkedIn
 					</a>
 					<a
 						className="font-code-sm text-code-sm text-primary hover:text-secondary-container uppercase"
-						href="#"
+						href="https://ariyantobudiman.vercel.app/"
 					>
 						Source
 					</a>

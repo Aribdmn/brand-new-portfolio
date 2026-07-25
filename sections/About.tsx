@@ -45,6 +45,13 @@ const About = () => {
 			type: "chars, words, lines",
 		});
 
+		gsap.to(textContentRef.current, {
+			text: originalHTML,
+			duration: 2,
+			ease: "power2.inOut",
+			delay: 1,
+		});
+
 		const tl = gsap.timeline();
 
 		tl.to("#init-text", {
@@ -56,18 +63,6 @@ const About = () => {
 				speed: 0.05,
 			},
 		})
-			.to(".cursor-dot", {
-				opacity: 0,
-				repeat: -1,
-				yoyo: true,
-				duration: 0.5,
-				ease: "power2.inOut",
-			})
-			.to(textContentRef.current, {
-				text: originalHTML,
-				duration: 1.5,
-				ease: "power2.inOut",
-			})
 			.from(heroTitle.lines, {
 				duration: 0.5,
 				y: 100,
@@ -149,81 +144,79 @@ const About = () => {
 						</div>
 					</div>
 				</div>
-				<div className="md:block md:col-span-5 flex items-center justify-center relative lg:mt-lg mt-0">
-					{/* <!-- Contrast Layering Container --> */}
-					<div className="container-console-code w-full aspect-square bg-primary-container border-2 border-primary relative p-sm">
-						<div className="absolute top-0 left-0 w-full h-full border-2 border-primary transform translate-x-sm translate-y-sm -z-10 bg-secondary-container"></div>
-						<div className="flex gap-xs border-b-2 border-surface-container-highest pb-sm">
-							<div className="w-4 h-4 bg-error no-rounded"></div>
-							<div className="w-4 h-4 bg-[#c6c6c7] no-rounded"></div>
-							<div className="w-4 h-4 bg-secondary-fixed no-rounded"></div>
-						</div>
-						<div
-							ref={container}
-							className=" container-text-code text-primary p-sm h-full bg-[#0A0A0A] border border-[#2A2A2A]"
-						>
-							<span
-								ref={textContentRef}
-								className="whitespace-pre-wrap inline text-[11px] lg:text-[16px] font-mono-data text-mono-data"
+				<div className="hidden md:block">
+					<div className="md:block md:col-span-5 flex items-center justify-center relative lg:mt-lg mt-0">
+						{/* <!-- Contrast Layering Container --> */}
+						<div className="container-console-code w-full aspect-square bg-primary-container border-2 border-primary relative p-sm">
+							<div className="absolute top-0 left-0 w-full h-full border-2 border-primary transform translate-x-sm translate-y-sm -z-10 bg-secondary-container"></div>
+							<div className="flex gap-xs border-b-2 border-surface-container-highest pb-sm">
+								<div className="w-4 h-4 bg-error no-rounded"></div>
+								<div className="w-4 h-4 bg-[#c6c6c7] no-rounded"></div>
+								<div className="w-4 h-4 bg-secondary-fixed no-rounded"></div>
+							</div>
+							<div
+								ref={container}
+								className=" container-text-code text-primary p-sm h-full bg-[#0A0A0A] border border-[#2A2A2A]"
 							>
-								<span className="text-[#c6c6c7]">const</span>{" "}
-								<span className="text-[#c6c6c7]">systemConfig = {"{"}</span>
-								<br />
-								{"  "}
-								<span className="text-[#c6c6c7]">developer: </span>
-								<span className="text-[#13ff43]">
-									&quot;ARIYANTO BUDIMAN&quot;
+								<span
+									ref={textContentRef}
+									className="whitespace-pre-wrap inline text-[11px] lg:text-[16px] font-mono-data text-mono-data"
+								>
+									<span className="text-[#c6c6c7]">const</span>{" "}
+									<span className="text-[#c6c6c7]">systemConfig = {"{"}</span>
+									<br />
+									{"  "}
+									<span className="text-[#c6c6c7]">developer: </span>
+									<span className="text-[#13ff43]">
+										&quot;ARIYANTO BUDIMAN&quot;
+									</span>
+									<span className="text-[#c6c6c7]">,</span>
+									<br />
+									{"  "}
+									<span className="text-[#c6c6c7]">role: </span>
+									<span className="text-[#13ff43]">
+										&quot;Software Developer&quot;
+									</span>
+									<span className="text-[#c6c6c7]">,</span>
+									<br />
+									{"  "}
+									<span className="text-[#c6c6c7]">coreSkills: [</span>
+									<span className="text-[#13ff43]">&quot;JavaScript&quot;</span>
+									<span className="text-[#c6c6c7]">, </span>
+									<span className="text-[#13ff43]">&quot;Python&quot;</span>
+									<span className="text-[#c6c6c7]">, </span>
+									<span className="text-[#13ff43]">&quot;Java&quot;</span>
+									<span className="text-[#c6c6c7]">, </span>
+									<span className="text-[#13ff43]">&quot;SQL&quot;</span>
+									<span className="text-[#c6c6c7]">],</span>
+									<br />
+									{"  "}
+									<span className="text-[#c6c6c7]">domain: </span>
+									<span className="text-[#13ff43]">
+										&quot;Logic-Driven & Data Systems&quot;
+									</span>
+									<span className="text-[#c6c6c7]">,</span>
+									<br />
+									{""}
+									{"  "}
+									<span className="text-[#c6c6c7]">
+										execute: () =&gt; {"{"}
+									</span>
+									<br />
+									<span className="text-[#c6c6c7]">{"    "}return </span>
+									<span className="text-[#13ff43]">
+										&quot;Optimizing code & architecture.&quot;
+									</span>
+									<span className="text-[#c6c6c7]">;</span>
+									<br />
+									{"  "}
+									<span className="text-[#c6c6c7]">{"}"}</span>
+									<br />
+									<span className="text-[#c6c6c7]">{"};"}</span>
+									<br />
 								</span>
-								<span className="text-[#c6c6c7]">,</span>
-								<br />
-								{"  "}
-								<span className="text-[#c6c6c7]">role: </span>
-								<span className="text-[#13ff43]">
-									&quot;Software Developer&quot;
-								</span>
-								<span className="text-[#c6c6c7]">,</span>
-								<br />
-								{"  "}
-								<span className="text-[#c6c6c7]">coreSkills: [</span>
-								<span className="text-[#13ff43]">&quot;JavaScript&quot;</span>
-								<span className="text-[#c6c6c7]">, </span>
-								<span className="text-[#13ff43]">&quot;Python&quot;</span>
-								<span className="text-[#c6c6c7]">, </span>
-								<span className="text-[#13ff43]">&quot;Java&quot;</span>
-								<span className="text-[#c6c6c7]">, </span>
-								<span className="text-[#13ff43]">&quot;SQL&quot;</span>
-								<span className="text-[#c6c6c7]">],</span>
-								<br />
-								{"  "}
-								<span className="text-[#c6c6c7]">domain: </span>
-								<span className="text-[#13ff43]">
-									&quot;Logic-Driven & Data Systems&quot;
-								</span>
-								<span className="text-[#c6c6c7]">,</span>
-								<br />
-								{"  "}
-								<span className="text-[#c6c6c7]">status: </span>
-								<span className="text-[#13ff43]">
-									&quot;🟢 Ready for deployment&quot;
-								</span>
-								<span className="text-[#c6c6c7]">,</span>
-								<br />
-								{"  "}
-								<span className="text-[#c6c6c7]">execute: () =&gt; {"{"}</span>
-								<br />
-								<span className="text-[#c6c6c7]">{"    "}return </span>
-								<span className="text-[#13ff43]">
-									&quot;Optimizing code & architecture.&quot;
-								</span>
-								<span className="text-[#c6c6c7]">;</span>
-								<br />
-								{"  "}
-								<span className="text-[#c6c6c7]">{"}"}</span>
-								<br />
-								<span className="text-[#c6c6c7]">{"};"}</span>
-								<br />
-							</span>
-							<span className="text-[#c6c6c7] cursor">_</span>
+								<span className="text-[#c6c6c7] cursor">_</span>
+							</div>
 						</div>
 					</div>
 				</div>
