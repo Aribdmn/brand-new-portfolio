@@ -55,7 +55,7 @@ const Skills = () => {
 							</h3>
 						</div>
 						<ul className="space-y-sm">
-							<li>-&gt; React / Next.js</li>
+							<li>-&gt; React / Next.js / Vue.js</li>
 							<li>-&gt; HTML5 / CSS3 / JavaScript</li>
 							<li>-&gt; TypeScript</li>
 							<li>-&gt; Tailwind CSS / Bootstrap</li>

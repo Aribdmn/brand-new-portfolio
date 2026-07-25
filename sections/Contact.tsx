@@ -22,13 +22,13 @@ const Contact = () => {
 		tl.from(".contact-init", {
 			opacity: 0,
 			y: 100,
-			duration: 1,
+			duration: 0.5,
 			ease: "power2.out",
 		})
 			.from(".form-init", {
 				opacity: 0,
 				y: 100,
-				duration: 1,
+				duration: 0.5,
 				ease: "power2.out",
 			})
 			.to(spanRef.current, {

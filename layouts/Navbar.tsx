@@ -49,14 +49,13 @@ const Navbar = () => {
 			tl.from(menuRef.current, {
 				y: -100,
 				duration: 1,
-				opacity: 0,
 				ease: "power3.out",
-			}).fromTo(
-				".mobile-link",
-				{ opacity: 0, y: 20 },
-				{ opacity: 1, y: 0, duration: 0.3, stagger: 0.1, ease: "power2.out" },
-				"-=0.2",
-			);
+			}).from(".nav-mobile", {
+				x: -50,
+				opacity: 0,
+				duration: 0.5,
+				stagger: 0.1,
+			});
 
 			timelineRef.current = tl;
 		},
@@ -82,9 +81,9 @@ const Navbar = () => {
 
 	return (
 		<nav className="fixed top-0 w-full z-50 bg-surface border-b-2 border-primary transition-colors duration-150 ease-in-out">
-			<div className="flex justify-between z-50 items-center px-margin pt-4 py-5 max-w-300 mx-auto">
-				<div className="font-headline-md text-headline-md font-bold text-primary  tracking-tight">
-					BUDDEV!
+			<div className="flex justify-between  items-center px-margin pt-4 py-5 max-w-300 mx-auto">
+				<div className="z-50 font-headline-md text-headline-md font-bold text-primary  tracking-tight">
+					BudDev!
 				</div>
 				{/* <!-- Desktop Navigation --> */}
 				<ul
@@ -115,11 +114,11 @@ const Navbar = () => {
 
 				<div
 					ref={menuRef}
-					className={`${isMobileMenuOpen ? "block" : "hidden"} z-30 nav-mobile absolute top-full left-0 w-full bg-surface border-b-2 border-primary shadow-lg`}
+					className={`${isMobileMenuOpen ? "block" : "hidden"} z-30 absolute top-full left-0 w-full bg-surface border-b-2 border-primary shadow-lg`}
 				>
 					<ul className="py-2 space-y-1">
 						{["about", "skills", "projects", "contact"].map((id) => (
-							<li key={id}>
+							<li key={id} className="nav-mobile" onClick={toggleMobileMenu}>
 								<Link
 									href={`#${id}`}
 									className={getLinkClass(id)}
