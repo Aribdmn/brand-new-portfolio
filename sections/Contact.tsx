@@ -3,7 +3,8 @@
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
-import { useRef } from "react";
+import { useRef, useState, useTransition } from "react";
+import { sendEmailNotification, handleContactForm } from "@/app/actions";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -40,6 +41,38 @@ const Contact = () => {
 				ease: "power2.inOut",
 			});
 	});
+
+	const [isPending, startTransition] = useTransition();
+	const [statusMessage, setStatusMessage] = useState<{
+		success?: boolean;
+		text?: string;
+	} | null>(null);
+
+	async function handleSubmit(event: React.SubmitEvent<HTMLFormElement>) {
+		event.preventDefault();
+		const formElement = event.currentTarget;
+		const formData = new FormData(formElement);
+
+		setStatusMessage(null);
+
+		startTransition(async () => {
+			const result = await sendEmailNotification(formData);
+			const postInquiries = await handleContactForm(formData);
+
+			if (result.success || postInquiries?.success) {
+				setStatusMessage({
+					success: true,
+					text: "TRANSMISSION SUCCESSFUL. WE WILL BE IN TOUCH SOON. ^-^",
+				});
+				formElement.reset();
+			} else {
+				setStatusMessage({
+					success: false,
+					text: result.error || "TRANSMISSION FAILED.",
+				});
+			}
+		});
+	}
 
 	return (
 		<section
@@ -81,13 +114,14 @@ const Contact = () => {
 				>
 					{/* <!-- Accent corner --> */}
 					<div className="absolute top-0 right-0 w-8 h-8 border-b-2 border-l-2 border-primary bg-secondary-container"></div>
-					<form className="space-y-md">
+					<form onSubmit={handleSubmit} className="space-y-md">
 						<div>
 							<label className="block font-label-bold text-label-bold text-primary uppercase mb-xs">
 								IDENTIFIER (NAME)
 							</label>
 							<input
 								className="w-full bg-surface border-2 border-primary p-sm font-mono-data focus:outline-none focus:border-secondary-container focus:bg-surface-bright transition-colors rounded-none placeholder:text-outline"
+								name="name"
 								placeholder="Enter full name"
 								type="text"
 							/>
@@ -98,6 +132,7 @@ const Contact = () => {
 							</label>
 							<input
 								className="w-full bg-surface border-2 border-primary p-sm font-mono-data focus:outline-none focus:border-secondary-container focus:bg-surface-bright transition-colors rounded-none placeholder:text-outline"
+								name="email"
 								placeholder="username@domain.com"
 								type="email"
 							/>
@@ -108,6 +143,7 @@ const Contact = () => {
 							</label>
 							<select
 								className="w-full bg-surface border-2 border-primary p-sm font-mono-data text-primary focus:outline-none focus:border-secondary-container focus:bg-surface-bright transition-colors rounded-none cursor-pointer"
+								name="intent"
 								defaultValue={""}
 							>
 								<option value="" disabled>
@@ -124,17 +160,27 @@ const Contact = () => {
 							</label>
 							<textarea
 								className="w-full bg-surface border-2 border-primary p-sm font-mono-data focus:outline-none focus:border-secondary-container focus:bg-surface-bright transition-colors rounded-none placeholder:text-outline resize-none"
+								name="message"
 								placeholder="Detail project parameters..."
 								rows={4}
 							></textarea>
 						</div>
 						<button
-							className="w-full font-label-bold text-label-bold uppercase tracking-wider bg-secondary-container text-primary px-lg py-sm border-2 border-primary hover:bg-primary hover:text-secondary-container transition-colors duration-150 flex justify-center items-center"
+							className="w-full font-label-bold text-label-bold uppercase tracking-wider bg-secondary-container text-primary px-lg py-sm border-2 border-primary hover:bg-primary hover:text-secondary-container transition-colors duration-150 flex justify-center items-center disabled:opacity-50 cursor-pointer"
 							type="submit"
+							disabled={isPending}
 						>
-							TRANSMIT DATA
+							{isPending ? "TRANSMITTING..." : "TRANSMIT DATA"}
 							<span className="material-symbols-outlined ml-xs">send</span>
 						</button>
+
+						{statusMessage && (
+							<p
+								className={`text-sm font-mono-data mt-2 ${statusMessage.success ? "text-green-500" : "text-red-500"}`}
+							>
+								{statusMessage.text}
+							</p>
+						)}
 					</form>
 				</div>
 			</div>

@@ -18,6 +18,7 @@ Welcome to the source code repository for my personal portfolio. This project se
 - **Animation:** [GSAP](https://gsap.com/) (Professional-grade high-performance web animations)
 - **State Management:** [Zustand](https://zustand-demo.pmnd.rs/) (Lightweight and fast global state management)
 - **Backend & Database:** [Supabase](https://supabase.com/) (Reliable database and real-time backend)
+- **Notification System:** [Resend](https://resend.com/) (Developer-first email API for sending notifications)
 
 ### Purpose of This Repository
 
@@ -41,6 +42,7 @@ Selamat datang di repositori kode sumber untuk website portofolio pribadi saya. 
 - **Animation:** [GSAP](https://gsap.com/) (Pustaka animasi web profesional dengan performa tinggi)
 - **State Management:** [Zustand](https://zustand-demo.pmnd.rs/) (Manajemen _state_ global yang ringan dan efisien)
 - **Backend & Database:** [Supabase](https://supabase.com/) (Penyimpanan data yang aman dan handal)
+- **Notification System:** [Resend](https://resend.com/) (API email modern untuk pengiriman notifikasi yang handal)
 
 ### Tujuan Repositori Ini
 
