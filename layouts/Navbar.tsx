@@ -98,9 +98,12 @@ const Navbar = () => {
 						</li>
 					))}
 				</ul>
-				<button className="hidden md:inline-flex items-center justify-center font-label-bold text-label-bold uppercase tracking-wider bg-secondary-container text-primary p-sm border-2 border-primary hover:bg-primary hover:text-secondary-container transition-colors duration-150 ease-in-out">
-					DOWNLOAD CV
-				</button>
+				<a
+					href="#contact"
+					className="hidden md:inline-flex items-center justify-center font-label-bold text-label-bold uppercase tracking-wider bg-secondary-container text-primary p-sm border-2 border-primary hover:bg-primary hover:text-secondary-container transition-colors duration-150 ease-in-out"
+				>
+					Get In Touch
+				</a>
 				{/* <!-- Mobile Menu Icon (Placeholder interaction) --> */}
 				<button className="md:hidden text-primary" onClick={toggleMobileMenu}>
 					<span
@@ -129,9 +132,12 @@ const Navbar = () => {
 							</li>
 						))}
 					</ul>
-					<button className="mx-5 mb-2 items-center justify-center font-label-bold text-label-bold uppercase tracking-wider bg-secondary-container text-primary p-2 border border-primary hover:bg-primary hover:text-secondary-container transition-colors duration-150 ease-in-out">
-						DOWNLOAD CV
-					</button>
+					<a
+						href="#contact"
+						className="mx-5 mb-2 items-center justify-center font-label-bold text-label-bold uppercase tracking-wider bg-secondary-container text-primary p-2 border border-primary hover:bg-primary hover:text-secondary-container transition-colors duration-150 ease-in-out"
+					>
+						Get In Touch
+					</a>
 				</div>
 			</div>
 		</nav>
