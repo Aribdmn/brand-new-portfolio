@@ -37,9 +37,9 @@ const Projects = () => {
 		>
 			<div className="max-w-300 mx-auto px-margin w-full py-lg">
 				<div ref={container} className="heading-project mb-lg">
-					<div className=" flex justify-between items-end mb-lg border-b-2 border-primary pb-sm">
+					<div className="flex justify-between items-end border-b-2 border-primary pb-sm mb-2">
 						<h2 className="font-headline-lg text-headline-lg text-primary uppercase">
-							Execution Log
+							Projects and Experiments
 						</h2>
 						<span className="font-mono-data text-mono-data text-on-surface-variant uppercase">
 							//.

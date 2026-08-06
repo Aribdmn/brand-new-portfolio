@@ -90,20 +90,22 @@ const Navbar = () => {
 					className="hidden md:flex space-x-0 border-x-2 border-primary divide-x-2 divide-primary"
 					id="nav-links"
 				>
-					{["about", "skills", "projects", "contact"].map((id) => (
-						<li key={id}>
-							<Link href={`#${id}`} className={getLinkClass(id)}>
-								{id}
-							</Link>
-						</li>
-					))}
+					{["about", "experience", "skills", "projects", "contact"].map(
+						(id) => (
+							<li key={id}>
+								<Link href={`#${id}`} className={getLinkClass(id)}>
+									{id}
+								</Link>
+							</li>
+						),
+					)}
 				</ul>
-				<a
+				{/* <a
 					href="#contact"
 					className="hidden md:inline-flex items-center justify-center font-label-bold text-label-bold uppercase tracking-wider bg-secondary-container text-primary p-sm border-2 border-primary hover:bg-primary hover:text-secondary-container transition-colors duration-150 ease-in-out"
 				>
 					Get In Touch
-				</a>
+				</a> */}
 				{/* <!-- Mobile Menu Icon (Placeholder interaction) --> */}
 				<button className="md:hidden text-primary" onClick={toggleMobileMenu}>
 					<span
@@ -120,21 +122,24 @@ const Navbar = () => {
 					className={`${isMobileMenuOpen ? "block" : "hidden"} z-30 absolute top-full left-0 w-full bg-surface border-b-2 border-primary shadow-lg`}
 				>
 					<ul className="py-2 space-y-1">
-						{["about", "skills", "projects", "contact"].map((id) => (
-							<li key={id} className="nav-mobile" onClick={toggleMobileMenu}>
-								<Link
-									href={`#${id}`}
-									className={getLinkClass(id)}
-									onClick={() => setActiveSection(id)}
-								>
-									{id}
-								</Link>
-							</li>
-						))}
+						{["about", "experience", "skills", "projects", "contact"].map(
+							(id) => (
+								<li key={id} className="nav-mobile" onClick={toggleMobileMenu}>
+									<Link
+										href={`#${id}`}
+										className={getLinkClass(id)}
+										onClick={() => setActiveSection(id)}
+									>
+										{id}
+									</Link>
+								</li>
+							),
+						)}
 					</ul>
 					<a
 						href="#contact"
-						className="mx-5 mb-2 items-center justify-center font-label-bold text-label-bold uppercase tracking-wider bg-secondary-container text-primary p-2 border border-primary hover:bg-primary hover:text-secondary-container transition-colors duration-150 ease-in-out"
+						className="mx-5 mb-2 items-center justify-center font-label-bold text-label-bold tracking-wider bg-secondary-container text-primary p-2 border border-primary hover:bg-primary hover:text-secondary-container transition-colors duration-150 ease-in-out"
+						onClick={toggleMobileMenu}
 					>
 						Get In Touch
 					</a>

@@ -127,13 +127,13 @@ const About = () => {
 							<span className="text-secondary-container">BUDIMAN.</span>
 						</h1>
 						<h2 className=" font-headline-md text-headline-md text-primary mb-md border-l-4 border-secondary-container pl-sm">
-							Software Developer / Survey Programmer
+							Software Developer / Experience Survey Programmer
 						</h2>
 						<div className="">
 							<p className="text-[16px] lg:font-body-lg lg:text-body-lg text-on-surface-variant mb-lg border-b-2 border-on-surface-variant pb-md max-w-128">
-								Building robust software architectures <br />
-								with a strong focus on Full-Stack development <br />
-								and DevOps engineering.
+								Survey Programming Expert & Tech Enthusiast. Bridging a solid
+								foundation in large-scale data collection with a relentless
+								drive to master modern Software Engineering.
 							</p>
 							<div className="flex space-x-md">
 								<a

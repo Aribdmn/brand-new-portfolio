@@ -11,6 +11,8 @@ const Skills = () => {
 		".card-skill1",
 		".card-skill2",
 		".card-skill3",
+		".card-skill4",
+		".card-skill5",
 	];
 
 	useGSAP(() => {
@@ -32,6 +34,59 @@ const Skills = () => {
 		});
 	});
 
+	const feStack = [
+		"JavaScript",
+		"React.js",
+		"Next.js",
+		"Vue.js",
+		"Nuxt.js",
+		"HTML5",
+		"CSS3",
+		"jQuery",
+	];
+
+	const surveyTools = [
+		"SPSS",
+		"Decipher",
+		"SurveyToGo",
+		"Confirmit",
+		"Unicom Intelligence (Dimensions)",
+	];
+
+	const beStack = [
+		"Python",
+		"Java",
+		"TypeScript",
+		"Node.js",
+		"Django",
+		"FastAPI",
+		"Spring Boot",
+		"RESTful API",
+		"JSON/XML",
+		"Laravel",
+	];
+
+	const dbDevOps = [
+		"MySQL",
+		"PostgreSQL",
+		"Redis",
+		"Kafka",
+		"Git/GitHub",
+		"Linux",
+		"Docker",
+		"Docker Compose",
+		"Nginx",
+		"CI/CD Concepts",
+	];
+
+	const methodology = [
+		"Agile/Scrum",
+		"SDLC",
+		"API Integration",
+		"Functional Testing",
+		"Quota Management",
+	];
+
 	return (
 		<section
 			className="min-h-screen bg-surface-container-low border-b-2 border-primary flex items-center"
@@ -46,48 +101,106 @@ const Skills = () => {
 						//.
 					</span>
 				</div>
-				<div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-					{/* <!-- Skill Column 1 --> */}
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+					{/* <!-- front end --> */}
 					<div className="card-skill1 border-2 border-primary bg-surface p-md">
 						<div className="flex items-center space-x-xs mb-md pt-xs pb-md border-b-2 border-primary border-dashed">
 							<h3 className="font-headline-md text-headline-md text-primary">
 								Frontend Stack
 							</h3>
 						</div>
-						<ul className="space-y-sm">
-							<li>-&gt; React / Next.js / Vue.js</li>
-							<li>-&gt; HTML5 / CSS3 / JavaScript</li>
-							<li>-&gt; TypeScript</li>
-							<li>-&gt; Tailwind CSS / Bootstrap</li>
-						</ul>
+						<div className="flex flex-wrap gap-sm font-mono text-sm">
+							{feStack.map((item, key) => {
+								return (
+									<span
+										key={key}
+										className="border border-primary px-2 py-1 rounded-none"
+									>
+										{item}
+									</span>
+								);
+							})}
+						</div>
 					</div>
-					{/* <!-- Skill Column 2 --> */}
-					<div className="card-skill2 border-2 border-primary bg-primary-container p-md">
-						<div className="flex items-center space-x-xs mb-md pt-xs pb-md border-b-2 border-surface border-dashed">
-							<h3 className="font-headline-md text-headline-md text-surface">
-								Backend Stack
+					{/* <!-- Data & Survey Platforms --> */}
+					<div className="card-skill2 border-2 border-primary bg-surface p-md">
+						<div className="flex items-center space-x-xs mb-md pt-xs pb-md border-b-2 border-primary border-dashed">
+							<h3 className="font-headline-md text-headline-md text-primary">
+								Data & Survey Platforms
 							</h3>
 						</div>
-						<ul className="space-y-sm text-surface">
-							<li>-&gt; Java / Spring Boot</li>
-							<li>-&gt; Python / Django / FastAPI</li>
-							<li>-&gt; PHP / Laravel</li>
-							<li>-&gt; PostgreSQL / MySQL / Redis</li>
-						</ul>
+						<div className="flex flex-wrap gap-sm font-mono text-sm">
+							{surveyTools.map((item, key) => {
+								return (
+									<span
+										key={key}
+										className="border border-primary px-2 py-1 rounded-none"
+									>
+										{item}
+									</span>
+								);
+							})}
+						</div>
 					</div>
-					{/* <!-- Skill Column 3 --> */}
+					{/* <!-- Backend & API --> */}
 					<div className="card-skill3 border-2 border-primary bg-surface p-md">
 						<div className="flex items-center space-x-xs mb-md pt-xs pb-md border-b-2 border-primary border-dashed">
 							<h3 className="font-headline-md text-headline-md text-primary">
-								Architecture / DevOps
+								Backend & API
 							</h3>
 						</div>
-						<ul className="space-y-sm">
-							<li>-&gt; Docker / Kubernetes</li>
-							<li>-&gt; CI/CD Pipelines</li>
-							<li>-&gt; AWS</li>
-							<li>-&gt; System Design</li>
-						</ul>
+						<div className="flex flex-wrap gap-sm font-mono text-sm">
+							{beStack.map((item, key) => {
+								return (
+									<span
+										key={key}
+										className="border border-primary px-2 py-1 rounded-none"
+									>
+										{item}
+									</span>
+								);
+							})}
+						</div>
+					</div>
+					{/* <!-- Databases & DevOps --> */}
+					<div className="card-skill4 border-2 border-primary bg-surface p-md">
+						<div className="flex items-center space-x-xs mb-md pt-xs pb-md border-b-2 border-primary border-dashed">
+							<h3 className="font-headline-md text-headline-md text-primary">
+								Databases & DevOps
+							</h3>
+						</div>
+						<div className="flex flex-wrap gap-sm font-mono text-sm">
+							{dbDevOps.map((item, key) => {
+								return (
+									<span
+										key={key}
+										className="border border-primary px-2 py-1 rounded-none"
+									>
+										{item}
+									</span>
+								);
+							})}
+						</div>
+					</div>
+					{/* <!-- Methodology --> */}
+					<div className="card-skill5 border-2 border-primary bg-surface p-md">
+						<div className="flex items-center space-x-xs mb-md pt-xs pb-md border-b-2 border-primary border-dashed">
+							<h3 className="font-headline-md text-headline-md text-primary">
+								Methodology
+							</h3>
+						</div>
+						<div className="flex flex-wrap gap-sm font-mono text-sm">
+							{methodology.map((item, key) => {
+								return (
+									<span
+										key={key}
+										className="border border-primary px-2 py-1 rounded-none"
+									>
+										{item}
+									</span>
+								);
+							})}
+						</div>
 					</div>
 				</div>
 			</div>
