@@ -1,6 +1,7 @@
 import Footer from "@/layouts/Footer";
 import Navbar from "@/layouts/Navbar";
 import About from "@/sections/About";
+import AboutMe from "@/sections/AboutMe";
 import Contact from "@/sections/Contact";
 import Experience from "@/sections/Experience";
 import Projects from "@/sections/Projects";
@@ -12,6 +13,7 @@ export default function Home() {
 			<Navbar />
 			<main className="w-full">
 				<About />
+				<AboutMe />
 				<Experience />
 				<Skills />
 				<Projects />

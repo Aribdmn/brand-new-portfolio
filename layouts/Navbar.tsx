@@ -35,7 +35,7 @@ const Navbar = () => {
 
 	const getLinkClass = (targetId: string) => {
 		const baseClass =
-			"block px-md py-xs font-label-bold text-[14px] font-bold uppercase tracking-wider transition-colors duration-150 ease-in-out ";
+			"block px-md py-xs font-label-bold text-[12px] font-bold uppercase tracking-wider transition-colors duration-150 ease-in-out ";
 		return activeSection === targetId
 			? baseClass + "text-secondary border-b-2 border-secondary bg-surface"
 			: baseClass +
@@ -54,7 +54,7 @@ const Navbar = () => {
 				x: -50,
 				opacity: 0,
 				duration: 0.5,
-				stagger: 0.1,
+				stagger: 0.2,
 			});
 
 			timelineRef.current = tl;
@@ -90,15 +90,20 @@ const Navbar = () => {
 					className="hidden md:flex space-x-0 border-x-2 border-primary divide-x-2 divide-primary"
 					id="nav-links"
 				>
-					{["about", "experience", "skills", "projects", "contact"].map(
-						(id) => (
-							<li key={id}>
-								<Link href={`#${id}`} className={getLinkClass(id)}>
-									{id}
-								</Link>
-							</li>
-						),
-					)}
+					{[
+						"home",
+						"about me",
+						"experience",
+						"skills",
+						"projects",
+						"contact",
+					].map((id) => (
+						<li key={id}>
+							<Link href={`#${id}`} className={getLinkClass(id)}>
+								{id}
+							</Link>
+						</li>
+					))}
 				</ul>
 				{/* <a
 					href="#contact"
@@ -122,19 +127,24 @@ const Navbar = () => {
 					className={`${isMobileMenuOpen ? "block" : "hidden"} z-30 absolute top-full left-0 w-full bg-surface border-b-2 border-primary shadow-lg`}
 				>
 					<ul className="py-2 space-y-1">
-						{["about", "experience", "skills", "projects", "contact"].map(
-							(id) => (
-								<li key={id} className="nav-mobile" onClick={toggleMobileMenu}>
-									<Link
-										href={`#${id}`}
-										className={getLinkClass(id)}
-										onClick={() => setActiveSection(id)}
-									>
-										{id}
-									</Link>
-								</li>
-							),
-						)}
+						{[
+							"home",
+							"about me",
+							"experience",
+							"skills",
+							"projects",
+							"contact",
+						].map((id) => (
+							<li key={id} className="nav-mobile" onClick={toggleMobileMenu}>
+								<Link
+									href={`#${id}`}
+									className={getLinkClass(id)}
+									onClick={() => setActiveSection(id)}
+								>
+									{id}
+								</Link>
+							</li>
+						))}
 					</ul>
 					<a
 						href="#contact"

@@ -78,7 +78,7 @@ const Experience = () => {
 						<div className="flex flex-col md:flex-row gap-3 justify-between items-start mb-md border-b-2 border-primary border-dashed pb-sm">
 							<div>
 								<h3 className="font-headline-md text-headline-md text-primary uppercase">
-									Programmer / Developer
+									Survey Programmer / Developer
 								</h3>
 								<h4 className="font-label-bold text-label-bold text-secondary-container uppercase">
 									NielsenIQ
@@ -93,52 +93,47 @@ const Experience = () => {
 								<span className="font-mono text-secondary-container mr-sm">
 									&gt;
 								</span>
-								Architected complex logic-driven applications for large-scale
-								data collection, capturing and processing feedback from over
-								5,000 users monthly.
+								Engineered survey apps successfully capturing 5,000+ monthly
+								completed respondent data.
 							</li>
 							<li className="flex items-start">
 								<span className="font-mono text-secondary-container mr-sm">
 									&gt;
 								</span>
-								Spearheaded the technical translation of client questionnaires
-								and business requirements into functional scripts using survey
-								platform with various programming languages such as Python,
-								JavaScript, and VBScript.
+								Scripted complex survey logic & client requirements using
+								Python, JS, and VBScript.
 							</li>
 							<li className="flex items-start">
 								<span className="font-mono text-secondary-container mr-sm">
 									&gt;
 								</span>
-								Developed complex logic including branching, piping,
-								randomization, and custom validations for concurrent projects
-								across the Asia-Pacific region.
+								Implemented branching, piping, and custom validations across
+								APAC regional projects.
 							</li>
 							<li className="flex items-start">
 								<span className="font-mono text-secondary-container mr-sm">
 									&gt;
 								</span>
-								Optimized database interactions to handle large-scale datasets
-								effectively, ensuring highly efficient data export, processing,
-								and reporting.
+								Optimized database queries for large datasets to streamline
+								exports and reporting.
 							</li>
 							<li className="flex items-start">
 								<span className="font-mono text-secondary-container mr-sm">
 									&gt;
 								</span>
-								Led technical troubleshooting for production systems,
-								implementing robust bug fixes in high-concurrency environments.
+								Resolved production bugs and system bottlenecks in
+								high-concurrency environments.
 							</li>
 							<li className="flex items-start">
 								<span className="font-mono text-secondary-container mr-sm">
 									&gt;
 								</span>
-								Collaborated within Agile/Scrum frameworks alongside
-								cross-functional teams of 4 to 10 members to consistently
-								deliver functional system modules.
+								Delivered system modules within Agile/Scrum cross-functional
+								teams (4–10 members).
 							</li>
 						</ul>
 					</div>
+
 					{/* <!-- Role 2 --> */}
 					<div className="exp-card2 border-2 border-primary bg-surface p-md rounded-none">
 						<div className="flex flex-col md:flex-row gap-3 justify-between items-start mb-md border-b-2 border-primary border-dashed pb-sm">
@@ -151,7 +146,7 @@ const Experience = () => {
 								</h4>
 							</div>
 							<div className="font-mono text-sm text-primary uppercase border-2 border-primary px-2 py-1 rounded-none">
-								Sep 2018 - Sep 2019
+								Oct 2017 - Sep 2019
 							</div>
 						</div>
 						<ul className="space-y-sm text-on-surface-variant">
@@ -159,31 +154,28 @@ const Experience = () => {
 								<span className="font-mono text-secondary-container mr-sm">
 									&gt;
 								</span>
-								Conducted comprehensive manual testing and early automated
-								validation for complex applications to ensure logic
-								implementation met business and client specifications.
+								Executed manual & early automated testing to validate business
+								logic compliance.
 							</li>
 							<li className="flex items-start">
 								<span className="font-mono text-secondary-container mr-sm">
 									&gt;
 								</span>
-								Systematically identified, documented, and reported logic errors
-								and UI inconsistencies for immediate resolution.
+								Tracked, documented, and resolved system logic bugs and UI
+								issues.
 							</li>
 							<li className="flex items-start">
 								<span className="font-mono text-secondary-container mr-sm">
 									&gt;
 								</span>
-								Verified final links, datasets, and codebooks across desktop and
-								mobile platforms prior to stakeholder delivery, maintaining 100%
+								Verified cross-platform datasets and codebooks, ensuring 100%
 								data integrity.
 							</li>
 							<li className="flex items-start">
 								<span className="font-mono text-secondary-container mr-sm">
 									&gt;
 								</span>
-								Collaborated seamlessly with developers and survey programmers
-								to troubleshoot and debug technical issues quickly, optimizing
+								Partnered with devs to debug issues quickly and streamline
 								system workflows.
 							</li>
 						</ul>
