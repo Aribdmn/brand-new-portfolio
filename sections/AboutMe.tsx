@@ -91,10 +91,10 @@ const AboutMe = () => {
 								Informatics Engineering graduate with over 6 years of core
 								technical experience at NielsenIQ, specializing in logic-driven
 								systems, data processing, and Quality Assurance. Proven track
-								record in managing complex data logic for 5,000+ monthly active
-								users across the Asia-Pacific (APAC) region, collaborating
-								seamlessly within Agile/Scrum environments to deliver
-								high-impact solutions.
+								record in engineering survey applications that collect 5,000+
+								verified respondent submissions monthly across the Asia-Pacific
+								(APAC) region, collaborating seamlessly within Agile/Scrum
+								environments to deliver high-impact solutions.
 							</p>
 						</div>
 						{/* <!-- Card 2 --> */}
