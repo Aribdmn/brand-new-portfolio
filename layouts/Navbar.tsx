@@ -82,9 +82,11 @@ const Navbar = () => {
 	return (
 		<nav className="fixed top-0 w-full z-50 bg-surface border-b-2 border-primary transition-colors duration-150 ease-in-out">
 			<div className="flex justify-between  items-center px-margin pt-4 py-5 max-w-300 mx-auto">
-				<div className="z-50 font-headline-md text-headline-md font-bold text-primary  tracking-tight">
-					BudDev!
-				</div>
+				<a href="/">
+					<div className="z-50 font-headline-md text-headline-md font-bold text-primary  tracking-tight">
+						BudDev!
+					</div>
+				</a>
 				{/* <!-- Desktop Navigation --> */}
 				<ul
 					className="hidden md:flex space-x-0 border-x-2 border-primary divide-x-2 divide-primary"
