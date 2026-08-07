@@ -1,6 +1,8 @@
-# Personal Portfolio & Tech Playground
+# Personal Portfolio
 
-[English](#english) | [Bahasa Indonesia](#bahasa-indonesia)
+> A modern personal portfolio built as a visual playground for interactive UI, motion design, and real-world project storytelling.
+
+[🇬🇧 English](#english) | [🇮🇩 Bahasa Indonesia](#bahasa-indonesia)
 
 ---
 
@@ -8,23 +10,41 @@
 
 ## 🇬🇧 English
 
-Welcome to the source code repository for my personal portfolio. This project serves as a live showcase of my completed projects and a dedicated playground for experimenting with modern web design and cutting-edge technologies.
+This portfolio is designed to showcase both craft and capability:
+
+- A polished single-page experience with focused sections: About, About Me, Experience, Skills, Projects, and Contact
+- Strong motion system with GSAP + ScrollTrigger
+- Dynamic project showcase fetched from Supabase
+- Contact flow that saves inquiries and sends notification emails
+- Responsive desktop/mobile navigation with active section tracking
+
+### Why this portfolio matters
+
+This is more than a static landing page. It demonstrates:
+
+- Design-led frontend execution
+- Modern React architecture with Next.js App Router
+- Practical backend integration for data and communication
+- Real interaction flows for recruiters and project stakeholders
+
+### Core highlights
+
+- Interactive motion and scroll transitions
+- Data-driven project cards from Supabase
+- Contact form with Resend email notifications
+- Lightweight state handling with Zustand
+- Clean, high-contrast visual system and responsive layout
+- Mobile-friendly navigation with section awareness
 
 ### Tech Stack
 
-- **Framework:** [Next.js](https://nextjs.org/) (React Framework for performance & SEO)
-- **Language:** [TypeScript](https://www.typescriptlang.org/) (Type-safe and scalable code)
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/) (Modern, responsive utility-first CSS)
-- **Animation:** [GSAP](https://gsap.com/) (Professional-grade high-performance web animations)
-- **State Management:** [Zustand](https://zustand-demo.pmnd.rs/) (Lightweight and fast global state management)
-- **Backend & Database:** [Supabase](https://supabase.com/) (Reliable database and real-time backend)
-- **Notification System:** [Resend](https://resend.com/) (Developer-first email API for sending notifications)
-
-### Purpose of This Repository
-
-- **Live Showcase:** Displaying real-world projects and professional works.
-- **Frontend Exploration:** A canvas for refining UI/UX designs, animations, and responsive layouts through iterative redesigns.
-- **Tech Experimentation:** A testing ground for trying out new libraries, frameworks, and architectural patterns.
+- **Next.js**
+- **React + TypeScript**
+- **Tailwind CSS**
+- **GSAP**
+- **Zustand**
+- **Supabase**
+- **Resend**
 
 ---
 
@@ -32,36 +52,38 @@ Welcome to the source code repository for my personal portfolio. This project se
 
 ## 🇮🇩 Bahasa Indonesia
 
-Selamat datang di repositori kode sumber untuk website portofolio pribadi saya. Proyek ini dirancang sebagai tempat untuk memamerkan hasil kerja nyata sekaligus laboratorium tempat saya bereksperimen dengan desain _frontend_ dan teknologi web modern terbaru.
+Portfolio ini dibuat untuk menampilkan kemampuan desain dan implementasi:
+
+- Pengalaman satu halaman dengan bagian: About, About Me, Experience, Skills, Projects, dan Contact
+- Animasi halus menggunakan GSAP + ScrollTrigger
+- Tampilan proyek dinamis yang diambil dari Supabase
+- Form kontak yang menyimpan inquiry dan mengirim email notifikasi
+- Navigasi responsif desktop/mobile dengan pelacakan section aktif
+
+### Mengapa portfolio ini menarik
+
+Ini bukan hanya halaman statis. Portfolio ini menunjukkan:
+
+- Eksekusi frontend dengan nuansa desain
+- Arsitektur React modern menggunakan Next.js App Router
+- Integrasi backend nyata untuk data dan komunikasi
+- Alur interaksi yang siap dilihat perekrut
+
+### Sorotan utama
+
+- Animasi interaktif dan transisi scroll
+- Kartu proyek berbasis data dari Supabase
+- Form kontak dengan notifikasi email via Resend
+- State management ringan dengan Zustand
+- Sistem visual bersih dan responsif
+- Navigasi mobile-friendly dengan section-aware
 
 ### Tech Stack
 
-- **Framework:** [Next.js](https://nextjs.org/) (Framework React untuk performa dan SEO yang optimal)
-- **Language:** [TypeScript](https://www.typescriptlang.org/) (Untuk keamanan tipe data dan skalabilitas kode)
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/) (Desain antarmuka yang cepat, modern, dan _responsive_)
-- **Animation:** [GSAP](https://gsap.com/) (Pustaka animasi web profesional dengan performa tinggi)
-- **State Management:** [Zustand](https://zustand-demo.pmnd.rs/) (Manajemen _state_ global yang ringan dan efisien)
-- **Backend & Database:** [Supabase](https://supabase.com/) (Penyimpanan data yang aman dan handal)
-- **Notification System:** [Resend](https://resend.com/) (API email modern untuk pengiriman notifikasi yang handal)
-
-### Tujuan Repositori Ini
-
-- **Live Showcase:** Menampilkan daftar proyek _live_ yang telah saya kembangkan secara profesional maupun mandiri.
-- **Frontend Exploration:** Wadah eksplorasi desain antarmuka, transisi animasi, dan tata letak UI/UX modern yang terus saya perbarui dari waktu ke waktu.
-- **Tech Experimentation:** Tempat saya menguji coba implementasi teknologi, pustaka (_libraries_), dan pola arsitektur baru di dunia pengembangan web.
-
----
-
-## Project Structure / Struktur Proyek
-
-```text
-├── .next/              # Next.js build output / Hasil build Next.js
-├── app/                # Next.js App Router directory / Direktori App Router Next.js
-│   └── lib/            # Utility and third-party configuration (e.g., supabase-client.ts)
-├── components/         # Reusable UI components / Komponen UI yang dapat digunakan kembali
-├── layouts/            # Layout wrapper components / Komponen pembungkus tata letak
-├── node_modules/       # Project dependencies / Dependensi proyek
-├── public/             # Static assets (images, icons, etc.) / Aset statis
-├── sections/           # Major page sections / Bagian-bagian besar halaman
-├── stores/             # Global state management (Zustand) / Manajemen state global
-```
+- **Next.js**
+- **React + TypeScript**
+- **Tailwind CSS**
+- **GSAP**
+- **Zustand**
+- **Supabase**
+- **Resend**
