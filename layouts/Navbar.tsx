@@ -44,7 +44,7 @@ const Navbar = () => {
 
 	const getLinkClass = (targetId: string) => {
 		const baseClass =
-			"block px-md py-xs font-label-bold text-[10px] font-bold uppercase tracking-wider transition-colors duration-150 ease-in-out ";
+			"block px-md py-xs font-label-bold text-[11px] font-bold uppercase tracking-wider transition-colors duration-150 ease-in-out ";
 		return activeSection === targetId
 			? baseClass + "text-secondary border-b-2 border-secondary bg-surface"
 			: baseClass +
