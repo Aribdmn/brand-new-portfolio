@@ -13,6 +13,15 @@ const Navbar = () => {
 	const menuRef = useRef<HTMLDivElement>(null);
 	const timelineRef = useRef<gsap.core.Timeline | null>(null);
 
+	const navMenu = [
+		"home",
+		"about me",
+		"experience",
+		"skills",
+		"projects",
+		"contact",
+	];
+
 	useEffect(() => {
 		const sections = document.querySelectorAll("section");
 		const observerOptions = {
@@ -48,7 +57,7 @@ const Navbar = () => {
 
 			tl.from(menuRef.current, {
 				y: -100,
-				duration: 1,
+				duration: 0.5,
 				ease: "power3.out",
 			}).from(".nav-mobile", {
 				x: -50,
@@ -92,14 +101,7 @@ const Navbar = () => {
 					className="hidden md:flex space-x-0 border-x-2 border-primary divide-x-2 divide-primary"
 					id="nav-links"
 				>
-					{[
-						"home",
-						"about me",
-						"experience",
-						"skills",
-						"projects",
-						"contact",
-					].map((id) => (
+					{navMenu.map((id) => (
 						<li key={id}>
 							<Link href={`#${id}`} className={getLinkClass(id)}>
 								{id}
@@ -129,14 +131,7 @@ const Navbar = () => {
 					className={`${isMobileMenuOpen ? "block" : "hidden"} z-30 absolute top-full left-0 w-full bg-surface border-b-2 border-primary shadow-lg`}
 				>
 					<ul className="py-2 space-y-1">
-						{[
-							"home",
-							"about me",
-							"experience",
-							"skills",
-							"projects",
-							"contact",
-						].map((id) => (
+						{navMenu.map((id) => (
 							<li key={id} className="nav-mobile" onClick={toggleMobileMenu}>
 								<Link
 									href={`#${id}`}
