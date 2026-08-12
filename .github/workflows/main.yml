@@ -1,6 +1,6 @@
-name: Deploy Portfolio ke VPS
+name: Deploy Next.js Portfolio
 
-# Skrip ini akan berjalan otomatis SETIAP KALI Anda melakukan "git push" ke branch "main"
+# Memicu robot bekerja setiap ada push ke branch 'main'
 on:
   push:
     branches:
@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Eksekusi Remote SSH & Git Pull
+      - name: Eksekusi Remote SSH untuk Build & Restart PM2
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.VPS_HOST }}
@@ -19,5 +19,17 @@ jobs:
           key: ${{ secrets.VPS_SSH_KEY }}
           port: 22
           script: |
+            # 1. Masuk ke folder proyek Anda
             cd /var/www/portfolio-frontend
+            
+            # 2. Tarik kode terbaru dari GitHub
             git pull origin main
+            
+            # 3. Instal dependencies baru (jika ada penambahan package)
+            npm install
+            
+            # 4. Bangun ulang (Build) aplikasi Next.js
+            npm run build
+            
+            # 5. Restart aplikasi di PM2 agar perubahan langsung tayang
+            pm2 restart portfolio
