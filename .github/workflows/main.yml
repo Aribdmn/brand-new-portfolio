@@ -1,0 +1,23 @@
+name: Deploy Portfolio ke VPS
+
+# Skrip ini akan berjalan otomatis SETIAP KALI Anda melakukan "git push" ke branch "main"
+on:
+  push:
+    branches:
+      - main 
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Eksekusi Remote SSH & Git Pull
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: 22
+          script: |
+            cd /var/www/portfolio
+            git pull origin main
