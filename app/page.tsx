@@ -14,7 +14,6 @@ export default function Home() {
 			<main className="w-full">
 				<About />
 				<AboutMe />
-				<Experience />
 				<Skills />
 				<Projects />
 				<Contact />

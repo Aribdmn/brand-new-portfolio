@@ -65,6 +65,28 @@ const AboutMe = () => {
 							</div>
 							{/* <!-- Metadata List --> */}
 							<div className="border-t border-primary pt-md space-y-xs font-mono text-xs text-on-surface-variant">
+								<div className="flex flex-col gap-y-2 mb-4">
+									<span className="text-primary">PROFESSIONAL EXPERIENCE:</span>{" "}
+									<div className="flex justify-between mt-1">
+										<div>
+											<span className="font-mono text-secondary-container mr-sm">
+												&gt;
+											</span>
+											<span>Survey Programmer / Developer</span>
+										</div>
+										<span> (2019 - Present)</span>
+									</div>
+									<div className="flex justify-between">
+										<div>
+											<span className="font-mono text-secondary-container mr-sm">
+												&gt;
+											</span>
+											<span>Quality Assurance</span>
+										</div>
+										<span> (2018 - 2019)</span>
+									</div>
+								</div>
+
 								<div className="flex justify-between">
 									<span className="text-primary">LOCATION:</span>{" "}
 									<span>Jakarta, Indonesia</span>

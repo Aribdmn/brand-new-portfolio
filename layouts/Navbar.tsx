@@ -13,14 +13,7 @@ const Navbar = () => {
 	const menuRef = useRef<HTMLDivElement>(null);
 	const timelineRef = useRef<gsap.core.Timeline | null>(null);
 
-	const navMenu = [
-		"home",
-		"about me",
-		"experience",
-		"skills",
-		"projects",
-		"contact",
-	];
+	const navMenu = ["home", "about me", "skills", "projects", "contact"];
 
 	useEffect(() => {
 		const sections = document.querySelectorAll("section");

@@ -10,7 +10,7 @@ const ProjectCard = () => {
 		const { error, data } = await supabase
 			.from("projects")
 			.select("*")
-			.limit(2);
+			.limit(3);
 
 		error
 			? console.error("Error fetching projects:", error.message)
@@ -43,7 +43,7 @@ const ProjectCard = () => {
 	});
 
 	return (
-		<div className="grid grid-cols-1 md:grid-cols-2 gap-gutter card-project">
+		<div className="grid grid-cols-1 md:grid-cols-3 gap-gutter card-project">
 			{projects.map((project, key) => (
 				<div key={key} className="">
 					<div className="border-2 border-primary bg-surface group relative">
