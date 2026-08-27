@@ -67,7 +67,7 @@ const AboutMe = () => {
 							<div className="border-t border-primary pt-md space-y-xs font-mono text-xs text-on-surface-variant">
 								<div className="flex flex-col gap-y-2 mb-4">
 									<span className="text-primary">PROFESSIONAL EXPERIENCE:</span>{" "}
-									<div className="flex justify-between mt-1">
+									<div className="flex flex-col md:flex-row justify-between mt-1">
 										<div>
 											<span className="font-mono text-secondary-container mr-sm">
 												&gt;
@@ -87,7 +87,7 @@ const AboutMe = () => {
 									</div>
 								</div>
 
-								<div className="flex justify-between">
+								<div className="flex flex-col md:flex-row justify-between">
 									<span className="text-primary">LOCATION:</span>{" "}
 									<span>Jakarta, Indonesia</span>
 								</div>
