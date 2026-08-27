@@ -76,7 +76,7 @@ const AboutMe = () => {
 										</div>
 										<span> (2019 - Present)</span>
 									</div>
-									<div className="flex justify-between">
+									<div className="flex flex-col md:flex-row justify-between">
 										<div>
 											<span className="font-mono text-secondary-container mr-sm">
 												&gt;
@@ -87,7 +87,7 @@ const AboutMe = () => {
 									</div>
 								</div>
 
-								<div className="flex flex-col md:flex-row justify-between">
+								<div className="flex  justify-between">
 									<span className="text-primary">LOCATION:</span>{" "}
 									<span>Jakarta, Indonesia</span>
 								</div>
